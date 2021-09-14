@@ -1,0 +1,22 @@
+//import { useState } from "react";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
+import { ContactsProvider } from "./contexts/ContactsProvider";
+import { ConversationsProvider } from "./contexts/ConversationsProvider";
+import { SocketProvider } from "./contexts/SocketProvider";
+import useLocalStorage from "./hooks/useLocalStorage";
+export default function App() {
+  //const [id, setId] = useState();
+  const [id, setId] = useLocalStorage("id");
+
+  const dashboard = (
+    <SocketProvider>
+      <ContactsProvider>
+        <ConversationsProvider id={id}>
+          <Dashboard id={id} />
+        </ConversationsProvider>
+      </ContactsProvider>
+    </SocketProvider>
+  );
+  return id ? dashboard : <Login onIdSubmit={setId} />;
+}

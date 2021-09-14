@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -8,7 +8,13 @@ import { SidebarData } from "./SidebarData";
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-
+  console.log("Nav render");
+  useEffect(() => {
+    console.log("Nav effect");
+    return () => {
+      console.log("Nav cleanup");
+    };
+  }, []);
   return (
     <>
       <div className="navbar">
