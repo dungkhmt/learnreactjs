@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -28,12 +27,6 @@ function Navbar({ sidebar, showSidebar }) {
       <div className="drawer-root">
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <div className="nav-menu-items" />
-          {/* <ul className="nav-menu-items" onClick={showSidebar}> */}
-          <li className="navbar-toggle" onClick={showSidebar}>
-            <Link to="#" className="menu-bars">
-              <AiIcons.AiOutlineClose />
-            </Link>
-          </li>
           {SidebarData.map((item) => (
             <li key={item.path} className={item.cName}>
               <Link to={item.path}>
@@ -42,7 +35,6 @@ function Navbar({ sidebar, showSidebar }) {
               </Link>
             </li>
           ))}
-          {/* </ul> */}
         </nav>
       </div>
     </>

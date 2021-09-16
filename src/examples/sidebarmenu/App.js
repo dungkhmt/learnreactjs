@@ -1,11 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+//import Layout from "./Routes";
+import Navbar from "./Navbar";
 import Home from "./pages/Home";
 import Reports from "./pages/Reports";
-import Layout from "./Routes";
-
 function App() {
+  const [sidebar, setSidebar] = useState(true);
+  console.log("App render" + sidebar);
+
+  const showSidebar = () => setSidebar(!sidebar);
+
   console.log("App render");
 
   useEffect(() => {
@@ -18,12 +23,18 @@ function App() {
   return (
     <div style={{ display: "flex" }}>
       <Router>
-        <Layout>
+        <Navbar sidebar={sidebar} showSidebar={showSidebar} />
+        <main
+          className={`content ${
+            sidebar ? "minWidthContent" : "maxWidthContent"
+          }`}
+        >
+          <div className="toolbar" />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/reports" exact component={Reports} />
           </Switch>
-        </Layout>
+        </main>
       </Router>
     </div>
   );
