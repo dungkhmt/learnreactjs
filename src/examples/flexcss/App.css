@@ -1,0 +1,162 @@
+.box-container {
+  margin-bottom: 10px;
+  justify-content: center;
+  background-color: antiquewhite;
+  display: flex;
+}
+.box-row {
+  justify-content: center;
+  display: flex;
+  scroll-direction: horizontal;
+}
+.box {
+  width: 50px;
+  height: 50px;
+  border: black;
+  border-style: solid;
+  border-width: 1;
+}
+.nav-container {
+  min-height: 42px;
+  background-color: #ef5122;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list {
+  padding-left: 0;
+  margin: auto 16px;
+}
+
+.nav-item {
+  color: #fff;
+  list-style: none;
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.form-container {
+  max-width: 720px;
+  padding: 30px;
+  margin: 36px auto 0 auto;
+  background-color: #fff;
+}
+
+.form-row {
+  padding: 8px 0;
+  display: flex;
+}
+.form-label {
+  min-width: 100px;
+}
+.form_input {
+  flex: 1;
+}
+
+.column-layout {
+  margin-top: 30px;
+  display: flex;
+  padding: 12px 0;
+  background-color: rgb(192, 243, 243);
+}
+
+.column-item {
+  padding: 0 20px;
+}
+
+.sidebar-one {
+  flex: 1;
+}
+
+.sidebar-two {
+  flex: 2;
+}
+
+.sidebar-main {
+  flex: 5;
+}
+
+.feature-layout {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-around;
+  align-items: flex-end;
+  border-bottom: blue;
+}
+
+.feature-item {
+  margin-top: 15px;
+  padding: 10px 20px;
+  flex-basis: 30%;
+  background-color: bisque;
+  border: blue;
+  border-top: crimson;
+  border-style: solid;
+  border-width: thick;
+}
+
+.wrap-layout {
+  display: flex;
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 10px 0 30px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.wrap-layout__item {
+  width: 140px;
+  height: 100px;
+  color: azure;
+  text-align: center;
+  line-height: 90px;
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 20px;
+  background-color: blue;
+}
+
+.chart-layout {
+  margin: 36px auto 0 auto;
+  padding: 30px 0;
+  height: 350px;
+  background-color: burlywood;
+  display: flex;
+}
+
+.chart-layout__item {
+  width: 50px;
+  color: cadetblue;
+  text-align: center;
+  height: var(--percent);
+  background-color: coral;
+}
+
+.the-end {
+  margin-top: 40px;
+  display: flex;
+}
+
+.the-end-first {
+  flex: 1;
+  background-color: darkgoldenrod;
+}
+
+.the-end-second {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.the-end-second-one {
+  flex: 1;
+  padding: auto;
+  background-color: beige;
+}
+
+.the-end-second-two {
+  flex: 1;
+  padding: auto;
+  background-color: chartreuse;
+}

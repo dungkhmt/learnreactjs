@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.menu {
+  background-color: cadetblue;
+  flex-basis: 20%;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.menu-item {
+  width: 80%;
+  border-bottom: 0.1rem solid black;
+}
+.content {
+  background-color: azure;
+  flex-basis: 40%;
+}
+.advertisement {
+  background-color: antiquewhite;
+  flex-basis: 20%;
+  flex-direction: column;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.advertisement-item {
+  width: 70%;
+  height: 25%;
+
+  background-color: aqua;
+}
