@@ -15,13 +15,16 @@ const data = [
 ];
 export default function App() {
   const [selected, setSelected] = useState([]);
+
   const [checkAll, setCheckAll] = useState(false);
 
   function handleChange(e, i) {
     //alert("Change " + e.target.value + " index = " + i);
     let s = selected;
     s[i] = !s[i];
+
     setSelected([...s]);
+
     let cnt = 0;
     for (let i = 0; i < data.length; i++) if (s[i] == true) cnt = cnt + 1;
     if (cnt == data.length) setCheckAll(true);
@@ -32,6 +35,9 @@ export default function App() {
   }
   function handleCheckAll() {
     console.log("handleCheckAll");
+    let s = [];
+    for (let i = 0; i < data.length; i++) s.push(true);
+    setSelected(s);
   }
   useEffect(() => {
     let s = [];
@@ -53,6 +59,7 @@ export default function App() {
               <TableCell>
                 <Checkbox
                   id={"check" + { i }}
+                  checked={selected[i]}
                   onChange={(e) => handleChange(e, i)}
                 ></Checkbox>
               </TableCell>
