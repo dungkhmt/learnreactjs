@@ -14,35 +14,52 @@ const data = [
   { id: "3", name: "username3" },
 ];
 export default function App() {
-  const [selected, setSelected] = useState([]);
-
+  const [users, setUsers] = useState([]);
   const [checkAll, setCheckAll] = useState(false);
 
-  function handleChange(e, i) {
-    //alert("Change " + e.target.value + " index = " + i);
-    let s = selected;
-    s[i] = !s[i];
-
-    setSelected([...s]);
-
+  function handleChange(e) {
+    const { id, checked } = e.target;
+    console.log("handleChange item id = " + id + " value = " + checked);
+    console.log(users);
+    let tmp = users.map((u) => (u.id === id ? { ...u, checked: checked } : u));
+    console.log("tmp = ");
+    console.log(tmp);
     let cnt = 0;
-    for (let i = 0; i < data.length; i++) if (s[i] == true) cnt = cnt + 1;
-    if (cnt == data.length) setCheckAll(true);
-    if (cnt == 0) setCheckAll(false);
+    for (let j = 0; j < users.length; j++) {
+      if (tmp[j].checked == true) cnt = cnt + 1;
+    }
+    if (cnt == users.length) setCheckAll(true);
+    else setCheckAll(false);
+
+    setUsers(tmp);
   }
   function handleClick() {
-    console.log(selected);
+    console.log(users);
   }
   function handleCheckAll() {
     console.log("handleCheckAll");
-    let s = [];
-    for (let i = 0; i < data.length; i++) s.push(true);
-    setSelected(s);
+
+    if (checkAll) {
+      let tmp = data.map((i) => {
+        return { ...i, checked: false };
+      });
+      setUsers(tmp);
+    } else {
+      let tmp = data.map((i) => {
+        return { ...i, checked: true };
+      });
+      setUsers(tmp);
+    }
+    setCheckAll(!checkAll);
   }
   useEffect(() => {
-    let s = [];
-    for (let i = 0; i < data.length; i++) s.push(false);
-    setSelected(s);
+    let tmp = data.map((d) => {
+      return {
+        ...d,
+        checked: false,
+      };
+    });
+    setUsers(tmp);
   }, []);
   return (
     <div>
@@ -54,13 +71,13 @@ export default function App() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((item, i) => (
+          {users.map((item, i) => (
             <TableRow key={i}>
               <TableCell>
                 <Checkbox
-                  id={"check" + { i }}
-                  checked={selected[i]}
-                  onChange={(e) => handleChange(e, i)}
+                  id={item.id}
+                  checked={item.checked}
+                  onChange={handleChange}
                 ></Checkbox>
               </TableCell>
               <TableCell>{item.id}</TableCell>
