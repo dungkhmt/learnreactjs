@@ -1,0 +1,32 @@
+.root {
+}
+
+.nav-bar {
+  min-height: 40px;
+  background-color: blue;
+}
+.content {
+  display: flex;
+}
+
+.menu {
+  background-color: midnightblue;
+  min-width: 300px;
+  margin-left: -300px;
+  transition: margin 500ms;
+}
+
+.menu.active {
+  transition: margin 500ms;
+  margin-left: 0;
+}
+
+.minWidthContent {
+  transition: margin 500ms;
+  margin-left: 0;
+}
+
+.maxWidthContent {
+  transition: 500ms;
+  margin-left: 0;
+}

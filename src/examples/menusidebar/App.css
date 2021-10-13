@@ -1,0 +1,20 @@
+.nav-bar {
+  min-height: 40px;
+  background-color: blue;
+}
+
+.content {
+  display: flex;
+}
+
+.menu {
+  background-color: rebeccapurple;
+  min-width: 300px;
+  margin-left: -300px;
+  transition: margin 500ms;
+}
+
+.menu.active {
+  margin-left: 0;
+  transition: margin 500ms;
+}

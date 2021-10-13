@@ -24,7 +24,7 @@ function App() {
     <div style={{ display: "flex" }}>
       <Router>
         <Navbar sidebar={sidebar} showSidebar={showSidebar} />
-        <main
+        <div
           className={`content ${
             sidebar ? "minWidthContent" : "maxWidthContent"
           }`}
@@ -34,7 +34,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/reports" exact component={Reports} />
           </Switch>
-        </main>
+        </div>
       </Router>
     </div>
   );

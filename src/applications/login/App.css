@@ -1,0 +1,37 @@
+.nav-bar {
+  min-height: 40px;
+  background-color: blue;
+  display: flex;
+  justify-content: space-around;
+}
+.fa-bar {
+  flex-basis: 5%;
+}
+.blank-nav-bar {
+  flex-basis: 90%;
+}
+.login-container {
+  display: flex;
+  justify-content: space-around;
+}
+.login-form {
+}
+.login {
+  flex-basis: 5%;
+  color: aliceblue;
+}
+.content {
+  display: flex;
+}
+
+.menu {
+  background-color: rebeccapurple;
+  min-width: 300px;
+  margin-left: -300px;
+  transition: margin 500ms;
+}
+
+.menu.active {
+  margin-left: 0;
+  transition: margin 500ms;
+}

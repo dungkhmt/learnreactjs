@@ -16,16 +16,16 @@ function Navbar({ sidebar, showSidebar }) {
 
   return (
     <>
-      <header className="navbar">
+      <div className="navbar">
         <div className="toolbar">
           <Link to="#" className="menu-bar">
             <FaIcons.FaBars onClick={showSidebar} style={{ color: "#fff" }} />
           </Link>
           <div style={{ display: "flex", flexGrow: 1 }} />
         </div>
-      </header>
+      </div>
       <div className="drawer-root">
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <div className={sidebar ? "nav-menu active" : "nav-menu"}>
           <div className="nav-menu-items" />
           {SidebarData.map((item) => (
             <li key={item.path} className={item.cName}>
@@ -35,7 +35,7 @@ function Navbar({ sidebar, showSidebar }) {
               </Link>
             </li>
           ))}
-        </nav>
+        </div>
       </div>
     </>
   );

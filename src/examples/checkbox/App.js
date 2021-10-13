@@ -19,11 +19,7 @@ export default function App() {
 
   function handleChange(e) {
     const { id, checked } = e.target;
-    console.log("handleChange item id = " + id + " value = " + checked);
-    console.log(users);
     let tmp = users.map((u) => (u.id === id ? { ...u, checked: checked } : u));
-    console.log("tmp = ");
-    console.log(tmp);
     let cnt = 0;
     for (let j = 0; j < users.length; j++) {
       if (tmp[j].checked == true) cnt = cnt + 1;
@@ -37,8 +33,6 @@ export default function App() {
     console.log(users);
   }
   function handleCheckAll() {
-    console.log("handleCheckAll");
-
     if (checkAll) {
       let tmp = data.map((i) => {
         return { ...i, checked: false };
@@ -62,10 +56,14 @@ export default function App() {
     setUsers(tmp);
   }, []);
   return (
-    <div>
+    <div style={{ width: "500px" }}>
       <Table>
         <TableHead>
           <TableRow>
+            <TableCell>
+              <Checkbox onChange={handleCheckAll} checked={checkAll}></Checkbox>
+              <label>Check All</label>
+            </TableCell>
             <TableCell>ID</TableCell>
             <TableCell>Name</TableCell>
           </TableRow>
@@ -86,9 +84,10 @@ export default function App() {
           ))}
         </TableBody>
       </Table>
-      <label>Check All</label>
-      <Checkbox onChange={handleCheckAll} checked={checkAll}></Checkbox>
-      <Button onClick={handleClick}>Process</Button>
+
+      <Button variant="contained" color="primary" onClick={handleClick}>
+        Process
+      </Button>
     </div>
   );
 }
