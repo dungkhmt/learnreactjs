@@ -2,6 +2,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+//import App from "./examples/checkbox/App";
+//import App from "./examples/dialogbox/App";
+//import App from "./applications/whiteboard/App";
+//import App from "./examples/reduxcounter/App";
+//import App from "./examples/button/App";
+//import App from "./examples/textfield/App";
+//import App from "./examples/selectbox/App";
+//import App from "./examples/table-static/App";
+//import App from "./examples/table-dynamic/App";
+//import App from "./examples/model-built-from-scratch/App";
+//import App from "./examples/radiobutton/App";
+//import App from "./material-ui/material-table/App";
+import { BrowserRouter as Router } from "react-router-dom";
 import { createStore } from "redux";
 //import App from "./examples/recursive/App";
 //import App from "./examples/state-props/App";
@@ -31,21 +44,9 @@ import { createStore } from "redux";
 //import App from "./examples/menusidebar/App";
 //import App from "./examples/menusidebar/App";
 import App from "./applications/login/App";
+//import App from "./examples/discretemath/App";
 import allReducers from "./examples/reduxcounter/reducers";
 import "./index.css";
-//import App from "./examples/checkbox/App";
-//import App from "./examples/dialogbox/App";
-//import App from "./applications/whiteboard/App";
-//import App from "./examples/reduxcounter/App";
-//import App from "./examples/button/App";
-//import App from "./examples/textfield/App";
-//import App from "./examples/selectbox/App";
-//import App from "./examples/table-static/App";
-//import App from "./examples/table-dynamic/App";
-//import App from "./examples/model-built-from-scratch/App";
-//import App from "./examples/radiobutton/App";
-//import App from "./material-ui/material-table/App";
-
 let store = createStore(
   allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -53,7 +54,9 @@ let store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );
