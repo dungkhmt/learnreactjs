@@ -2,7 +2,6 @@
   min-height: 40px;
   background-color: blue;
   display: flex;
-  justify-content: space-around;
 }
 .fa-bar {
   flex-basis: 5%;

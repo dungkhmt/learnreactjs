@@ -24,10 +24,11 @@ export default function Login() {
         let token = res.headers["x-auth-token"];
         console.log("token = ", token);
         localStorage.setItem("token", token);
-        history.push("/report");
+        history.push("/");
         //getListUsers();
       })
       .catch((err) => {
+        alert("Login failed");
         console.log("exception err = ", err.response);
         if (err.response.status == 401) {
           history.push("/login");

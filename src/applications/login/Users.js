@@ -1,7 +1,8 @@
-import { Button, Paper } from "@material-ui/core";
+import { Button, IconButton, Paper } from "@material-ui/core";
 import Check from "@material-ui/icons/Check";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
+import EditIcon from "@material-ui/icons/Edit";
 import FilterList from "@material-ui/icons/FilterList";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
@@ -12,11 +13,26 @@ import axios from "axios";
 import MaterialTable from "material-table";
 import React from "react";
 import { useHistory } from "react-router-dom";
+
 export default function Users() {
   const history = useHistory();
   const columns = [
     { title: "Username", field: "userLoginId" },
+    { title: "Email", field: "email" },
     { title: "Created Stamp", field: "createdStamp" },
+    {
+      title: "",
+      render: (rowData) => (
+        <IconButton
+          onClick={() => {
+            //alert("edit " + rowData["userLoginId"])
+            history.push("/edit-user/" + rowData["userLoginId"]);
+          }}
+        >
+          <EditIcon />
+        </IconButton>
+      ),
+    },
   ];
 
   const handleClickAdd = () => {
@@ -25,9 +41,17 @@ export default function Users() {
   return (
     <div style={{ padding: 10 }}>
       <Paper>
-        <Button variant="contained" color="primary" onClick={handleClickAdd}>
-          Add
-        </Button>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div style={{ padding: 10 }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleClickAdd}
+            >
+              Add
+            </Button>
+          </div>
+        </div>
         <MaterialTable
           title="User management"
           icons={{

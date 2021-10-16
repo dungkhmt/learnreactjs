@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 //import App from "./examples/checkbox/App";
 //import App from "./examples/dialogbox/App";
 //import App from "./applications/whiteboard/App";
@@ -15,7 +14,6 @@ import { Provider } from "react-redux";
 //import App from "./examples/radiobutton/App";
 //import App from "./material-ui/material-table/App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { createStore } from "redux";
 //import App from "./examples/recursive/App";
 //import App from "./examples/state-props/App";
 //import App from "./examples/useContext/App";
@@ -43,21 +41,22 @@ import { createStore } from "redux";
 //import App from "./examples/simplesidebarmenu/App";
 //import App from "./examples/menusidebar/App";
 //import App from "./examples/menusidebar/App";
-import App from "./applications/login/App";
-//import App from "./examples/discretemath/App";
-import allReducers from "./examples/reduxcounter/reducers";
+//import App from "./applications/login/App";
+import App from "./examples/login-usermanagement/App";
 import "./index.css";
+
+/*
 let store = createStore(
   allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
+*/
 ReactDOM.render(
-  <Provider store={store}>
+  <>
     <Router>
       <App />
     </Router>
-  </Provider>,
+  </>,
   document.getElementById("root")
 );
 
