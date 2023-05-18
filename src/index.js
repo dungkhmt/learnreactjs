@@ -42,8 +42,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 //import App from "./examples/menusidebar/App";
 //import App from "./examples/menusidebar/App";
 //import App from "./applications/login/App";
-import App from "./examples/login-usermanagement/App";
+// import App from "./examples/login-usermanagement/App";
 import "./index.css";
+import App from "./examples/maps/App";
 
 /*
 let store = createStore(
