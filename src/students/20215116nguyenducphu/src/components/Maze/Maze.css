@@ -1,0 +1,76 @@
+.maze {
+    text-align: center;
+}
+.maze h1 {
+    display: inline-block;
+    padding: 20px 0;
+    font-size: 28px;
+    color: #088178;
+    font-weight: 500;
+}
+.maze .btn {
+    font-size: 16px;
+    padding: 10px 28px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #fff;
+    background: #1976d2;
+    cursor: pointer;
+}
+.maze .btn:hover {
+    opacity: 0.9;
+}
+.maze .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+}
+.maze .container .board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
+    margin: 0;
+}
+.maze .container .board .row {
+    display: flex;
+}
+.maze .container .board .row .boxes {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    border: 1px solid #0f1b21;
+    cursor: pointer;
+}
+.maze .container .board .row .boxes:hover {
+    background-color: #d2cfcf;
+}
+.maze .container .board .row .boxes svg,
+.maze .container .board .row .boxes img {
+    height: 30px;
+    width: 30px;
+    margin: auto;
+}
+.maze .container .form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 370px;
+    gap: 10px;
+}
+.maze .container .form textarea {
+    width: calc(100% - 16px);
+    height: 209px;
+    padding: 4px 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+.maze .container .form .btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
