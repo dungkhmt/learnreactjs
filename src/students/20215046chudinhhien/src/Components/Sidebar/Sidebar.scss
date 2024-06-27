@@ -1,0 +1,70 @@
+$primary-color: #FF9500;
+$secondary-color: #f5f5f5;
+$hover-color: #FF9500;
+$text-color: #626262;
+$active-color: #FF9500;
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: $secondary-color;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-sizing: border-box; // Thêm dòng này nếu chưa có
+
+  &__home {
+    margin-bottom: 30px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      color: $text-color;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &:active {
+        color: $hover-color;
+      }
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0; // Đảm bảo không có margin
+
+    li {
+      width: 100%;
+      margin: 0; // Đảm bảo không có margin
+
+      a {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 18px;
+        font-weight: 500;
+        color: $text-color;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        box-sizing: border-box; // Thêm dòng này nếu chưa có
+
+        &:hover {
+          background-color: $primary-color;
+          color: #fff;
+        }
+
+        &.active {
+          background-color: $active-color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

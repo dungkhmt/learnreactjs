@@ -1,0 +1,33 @@
+/* Tùy chỉnh header của bảng */
+.ant-table-thead > tr > th {
+  background-color: #4CAF50; /* Đặt màu nền cho header */
+  color: white; /* Đặt màu chữ cho header */
+  font-weight: bold; /* Đặt kiểu chữ đậm cho header */
+}
+
+/* Tùy chỉnh các hàng của bảng */
+.ant-table-tbody > tr > td {
+  background-color: #f9f9f9; /* Đặt màu nền cho các ô */
+  color: #333; /* Đặt màu chữ cho các ô */
+  border-bottom: 1px solid #ddd; /* Đặt đường viền dưới cho các ô */
+}
+
+/* Tùy chỉnh hàng khi di chuột */
+.ant-table-tbody > tr:hover > td {
+  background-color: #f1f1f1; /* Đặt màu nền khi di chuột */
+}
+
+.editable-cell {
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+}
+
+.editable-cell-value-wrap {
+  padding: 5px 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.editable-cell-value-wrap:hover {
+  border-color: #40a9ff;
+}

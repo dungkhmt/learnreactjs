@@ -1,0 +1,24 @@
+.bai5 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.right {
+  width: 100%;
+  height: calc(100vh - 100px);
+  flex: 1;
+}
+
+.left {
+  flex: 1;
+}
+
+h1 {
+  display: inline-block;
+  padding: 20px 0;
+  font-size: 28px;
+  color: #FF9500;
+  font-weight: 500;
+  text-align: center;
+}
